@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #bd933a;
+  --color-beige: #faf7f2;
+  --color-dark: #1a1814;
+  --color-ink: #0c0b09;
+  --color-text: #666666;
+  --header-h: 88px;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+  body { @apply bg-white font-body text-body antialiased; font-size: 16px; line-height: 28px; }
+  h1, h2, h3, h4, h5, h6 { @apply font-title font-normal text-dark; line-height: 1.15; text-wrap: balance; }
+  :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
+  input, select, textarea { font: inherit; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  }
+}
+
+@layer components {
+  .h1 { @apply text-[40px] leading-[1.15] md:text-[56px] xl:text-[72px]; }
+  .h2 { @apply text-[32px] md:text-[44px] xl:text-[54px]; }
+  .eyebrow { @apply inline-flex items-center gap-3 font-cond text-[13px] font-medium uppercase tracking-[.3em] text-[#555] md:text-[15px]; }
+  .btn { @apply inline-flex items-center justify-center gap-2 whitespace-nowrap bg-primary px-8 py-[17px] font-cond text-sm font-medium uppercase leading-none tracking-[.06em] text-white transition-colors duration-300 hover:bg-dark; }
+  .btn-dark { @apply bg-dark hover:bg-primary; }
+  .btn-line { @apply border border-primary bg-beige text-primary hover:bg-primary hover:text-white; }
+  .btn-sm { @apply px-[22px] py-[13px] text-[13px]; }
+  .field { @apply h-[58px] w-full border border-[#ddd] bg-white px-[22px] text-[15px] text-dark placeholder:text-[#888] focus:border-primary focus:outline-none; }
+  .field-soft { @apply h-[62px] w-full border-0 bg-field px-6 text-[15px] text-dark placeholder:text-[#777] focus:outline focus:outline-1 focus:outline-primary; }
+  .tab-gold { @apply absolute left-[30px] top-0 h-[9px] w-[66px] bg-primary; }
+}
+
+/* Decoraciones */
+.bg-noise {
+  background-color: var(--color-ink);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .33 0 0 0 0 .3 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.bg-dots {
+  background-image: radial-gradient(#cfcfcf 1.6px, transparent 1.7px);
+  background-size: 16px 16px;
+}
+
+/* Swiper: puntos de eventos y opiniones */
+.dots-pagination .swiper-pagination-bullet { border-radius: 50%; display: inline-block; cursor: pointer; }
+.dots-pagination { display: flex; gap: 10px; justify-content: center; }
+.dots-pagination .swiper-pagination-bullet { width: 10px; height: 10px; margin: 0 !important; background: #555; opacity: 1; }
+.dots-pagination .swiper-pagination-bullet-active { background: var(--color-primary); }
+
+/* Selector de fecha nativo: el ícono propio reemplaza al del navegador */
+.date-input::-webkit-calendar-picker-indicator { opacity: 0; position: absolute; inset: 0; width: 100%; height: 100%; cursor: pointer; }
