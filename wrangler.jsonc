@@ -1,0 +1,13 @@
+// Cloudflare Workers: el sitio es estático (next.config.mjs → output: 'export'), así que solo se publican
+// los archivos de out/. No usa OpenNext.
+// Build command: npm run build · Deploy command: npx wrangler deploy
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "salon-terraza",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
