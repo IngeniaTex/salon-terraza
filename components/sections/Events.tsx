@@ -22,7 +22,7 @@ export default function Events() {
       <WaveLines />
       <div className="container relative">
         <SectionTitle center eyebrow="Eventos" title={['¿Qué vas a', 'celebrar?']} className="mb-9 lg:mb-14" />
-        <ul className="-mx-[15px] flex snap-x snap-mandatory gap-4 overflow-x-auto px-[15px] pb-6 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:px-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden">
+        <ul className="-mx-[15px] flex snap-x snap-mandatory scroll-px-[15px] gap-4 overflow-x-auto px-[15px] pb-6 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:px-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden">
           {events.map(e => (
             <li key={e.title} className="w-[86%] flex-none snap-start md:w-auto">
               <article className="relative h-[380px]">
