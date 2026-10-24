@@ -1,10 +1,5 @@
-'use client';
-
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { A11y, Pagination } from 'swiper/modules';
-import 'swiper/css';
 import { events } from '@/data/contenido';
 import { waLink } from '@/lib/whatsapp';
 import SectionTitle from '@/components/ui/SectionTitle';
@@ -19,31 +14,25 @@ function WaveLines() {
   );
 }
 
-/** 12. Tipos de evento (adaptación de «Latest News»). Cada tarjeta abre WhatsApp para cotizar. */
+/** 12. Tipos de evento (adaptación de «Latest News»). Cada tarjeta abre WhatsApp para cotizar.
+ *  Escritorio: cuadrícula de 3 × 2. Tableta: 2 columnas. Celular: fila que se desliza de lado. */
 export default function Events() {
   return (
     <section id="eventos" className="relative overflow-hidden py-[72px] lg:py-[120px]">
       <WaveLines />
       <div className="container relative">
         <SectionTitle center eyebrow="Eventos" title={['¿Qué vas a', 'celebrar?']} className="mb-9 lg:mb-14" />
-        <Swiper
-          modules={[Pagination, A11y]}
-          slidesPerView={1.08}
-          spaceBetween={16}
-          breakpoints={{ 768: { slidesPerView: 2, spaceBetween: 24 }, 992: { slidesPerView: 3, spaceBetween: 24 } }}
-          pagination={{ el: '.events-pagination', clickable: true }}
-          className="!pb-6"
-        >
+        <ul className="-mx-[15px] flex snap-x snap-mandatory scroll-px-[15px] gap-4 overflow-x-auto px-[15px] pb-6 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:px-0 lg:grid-cols-3 [&::-webkit-scrollbar]:hidden">
           {events.map(e => (
-            <SwiperSlide key={e.title}>
-              <article className="relative h-[520px] lg:h-[560px]">
-                <div className="relative h-[430px] lg:h-[460px]">
+            <li key={e.title} className="w-[86%] flex-none snap-start md:w-auto">
+              <article className="relative h-[380px]">
+                <div className="relative h-[290px]">
                   <Image src={e.image} alt="" fill sizes="(min-width: 992px) 380px, (min-width: 768px) 50vw, 92vw" className="object-cover" style={{ objectPosition: e.position }} />
                 </div>
-                <span className="absolute right-7 top-0 grid h-[82px] w-[62px] place-content-center bg-primary text-center font-cond text-[13px] uppercase leading-tight tracking-[.08em] text-white">
+                <span className="absolute right-7 top-0 grid h-[82px] min-w-[62px] place-content-center px-2.5 bg-primary text-center font-cond text-[13px] uppercase leading-tight tracking-[.08em] text-white">
                   {e.badge[0]}<b className="block font-body text-[22px] font-normal leading-tight">{e.badge[1]}</b>
                 </span>
-                <div className="absolute inset-x-6 top-[340px] bg-white shadow-card lg:top-[360px]">
+                <div className="absolute inset-x-6 top-[214px] bg-white shadow-card">
                   <div className="px-7 pb-[22px]">
                     <div className="-mt-6 mb-4 flex items-center gap-3.5">
                       <span className="grid h-12 w-12 place-items-center border-2 border-primary bg-beige"><Icon name={e.icon} className="h-[22px] w-[22px] text-primary" /></span>
@@ -59,10 +48,9 @@ export default function Events() {
                   </div>
                 </div>
               </article>
-            </SwiperSlide>
+            </li>
           ))}
-        </Swiper>
-        <div className="events-pagination dots-pagination mt-6 [&_.swiper-pagination-bullet]:bg-[#d8d2c6]" />
+        </ul>
       </div>
     </section>
   );

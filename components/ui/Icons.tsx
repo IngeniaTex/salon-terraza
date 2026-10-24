@@ -1,5 +1,5 @@
 import {
-  CakeSlice, Camera, Car, ClipboardCheck, Clock, Flower2, Gem, GraduationCap, LayoutGrid, Mic, Music, Sparkles, Sun, Users, UtensilsCrossed, Wallet,
+  Baby, CakeSlice, Camera, Car, ClipboardCheck, Clock, Flower2, Gem, GraduationCap, LayoutGrid, Mic, Music, PartyPopper, Sparkles, Sun, Users, UtensilsCrossed, Wallet,
   type LucideProps,
 } from 'lucide-react';
 
@@ -20,6 +20,8 @@ const map = {
   mic: Mic,
   camera: Camera,
   wallet: Wallet,
+  party: PartyPopper,
+  baby: Baby,
 };
 
 export type IconName = keyof typeof map;

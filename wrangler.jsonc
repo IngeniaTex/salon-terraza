@@ -9,5 +9,8 @@
     "directory": "./out",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
-  }
+  },
+  // Ramas distintas de main se publican como vista previa con `wrangler preview`, que exige este bloque.
+  // Va vacío porque el sitio no usa bindings (KV, D1, etc.).
+  "previews": {}
 }

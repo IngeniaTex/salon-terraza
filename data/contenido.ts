@@ -29,10 +29,11 @@ export const about = {
 export const services = [
   { icon: 'utensils', title: 'Banquete', text: 'Banquete a dos o tres tiempos: crema o pasta, plato fuerte y guarnición, con pan y paneras.' },
   { icon: 'music', title: 'DJ e iluminación', text: 'DJ profesional y equipo de iluminación con 6 horas de servicio. Pista LED de 4 × 5 m.' },
-  { icon: 'flower', title: 'Mobiliario y decoración', text: 'Mesas, sillas, mantelería, cubre mantel, fundas, servilletas de tela y arreglos florales.' },
+  { icon: 'flower', title: 'Mobiliario y decoración', text: 'Mesas, sillas, mantelería, cubre mantel, fundas, servilletas de tela, arreglos florales y aro de globos.' },
   { icon: 'mic', title: 'Animación', text: 'Maestro de ceremonias, animador durante el evento y batucada con souvenirs.' },
   { icon: 'users', title: 'Personal', text: 'Coordinador del evento, meseros, personal de recepción y de limpieza para baños y salón.' },
   { icon: 'camera', title: 'Foto, video y música', text: 'Fotografía y video profesional Full HD, grupo versátil, mariachis, regional mexicano y cabezones.' },
+  { icon: 'party', title: 'Show infantil', text: 'Show infantil, personajes a elegir y pinta caritas.' },
 ] as const;
 
 const salon = 'Salón con 7 horas de servicio, incluyendo treinta minutos de recepción y treinta minutos de salida.';
@@ -58,7 +59,7 @@ export const packages = [
     items: [
       salon,
       mobiliario,
-      'Mesa principal, mesa para regalos y pastel de cortesía.',
+      'Mesas para pastel y de regalos de cortesía.',
       ...personal,
       'DJ profesional y equipo de iluminación (6 horas de servicio).',
     ],
@@ -72,7 +73,7 @@ export const packages = [
       salon,
       mobiliario,
       'Servilletas de tela.',
-      'Mesa principal, mesa para pastel y de regalos de cortesía.',
+      'Mesas para pastel y de regalos de cortesía.',
       'Arreglo floral básico por mesa de invitados (dos modelos a elegir).',
       'Arreglo floral para mesa de honor.',
       ...personal,
@@ -95,7 +96,7 @@ export const packages = [
       salon,
       mobiliario,
       'Servilletas de tela.',
-      'Mesa principal, mesa para pastel y de regalos de cortesía.',
+      'Mesas para pastel y de regalos de cortesía.',
       'Arreglo floral básico por mesa.',
       'Arreglo floral para mesa de honor.',
       ...personal,
@@ -161,6 +162,10 @@ export const promo = {
 export const events = [
   { image: '/img/mesa.jpg', position: '50% 50%', badge: ['Boda', '♥'], icon: 'gem', title: 'Bodas' },
   { image: '/img/xv.jpg', position: '62% 50%', badge: ['XV', 'Años'], icon: 'sparkles', title: 'XV años' },
+  // TODO: foto de un bautizo (no viene en el material del cliente).
+  { image: '/img/mesa.jpg', position: '85% 50%', badge: ['Bautizo', '✦'], icon: 'baby', title: 'Bautizos' },
   { image: '/img/brindis.jpg', position: '50% 50%', badge: ['Grad', '26'], icon: 'graduation', title: 'Graduaciones' },
   { image: '/img/disco.jpg', position: '50% 50%', badge: ['Fiesta', 'Disco'], icon: 'music', title: 'Fiestas temáticas' },
+  // TODO: foto de una fiesta infantil (no viene en el material del cliente).
+  { image: '/img/champagne.jpg', position: '50% 50%', badge: ['Fiesta', 'Infantil'], icon: 'cake', title: 'Fiestas infantiles' },
 ] as const;
