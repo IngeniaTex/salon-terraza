@@ -12,7 +12,8 @@ function Skyline() {
   );
 }
 
-/** 6. Servicios: 6 tarjetas con lo que incluyen los paquetes y los servicios adicionales. */
+/** 6. Servicios: tarjetas con lo que incluyen los paquetes y los servicios adicionales.
+ *  Si la última tarjeta quedaría sola en su fila, ocupa todo el ancho. */
 export default function Services() {
   return (
     <section id="servicios" className="relative overflow-hidden bg-beige py-[72px] lg:py-[120px]">
@@ -21,7 +22,7 @@ export default function Services() {
         <SectionTitle center eyebrow="Nuestros servicios" title="Todo para tu evento" className="mb-9 lg:mb-14" />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {services.map((s, i) => (
-            <Reveal key={s.title} delay={(i % 3) * 0.1}>
+            <Reveal key={s.title} delay={(i % 3) * 0.1} className={i === services.length - 1 ? `${services.length % 2 ? 'md:col-span-2' : ''} ${services.length % 3 === 1 ? 'lg:col-span-3' : ''}` : undefined}>
               <article className="group grid h-full gap-[18px] bg-white px-[26px] py-[30px] shadow-[inset_0_0_0_var(--color-primary)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[inset_0_-3px_0_var(--color-primary)] lg:px-10 lg:py-11">
                 <div className="flex items-center gap-[22px]">
                   <span className="relative h-14 w-14 flex-none">

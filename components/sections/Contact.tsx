@@ -62,7 +62,7 @@ export default function Contact() {
         <div className="grid content-start gap-[22px]">
           <SectionTitle eyebrow="¿Necesitas ayuda?" title="Contáctanos" />
           <Reveal className="grid gap-[22px]">
-            <p className="mb-3.5 leading-[1.85]">Escríbenos por WhatsApp o llámanos. Podemos diseñar un paquete a la medida de su presupuesto.</p>
+            <p className="mb-3.5 leading-[1.85]">Escríbenos o llámanos vía WhatsApp.</p>
             {rows.map(({ Icon, title, value, href, external }) => {
               const body = (
                 <>

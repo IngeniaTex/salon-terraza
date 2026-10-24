@@ -63,6 +63,6 @@ export const footerLinks = withReviews([
   { label: 'Contacto', href: '#contacto' },
 ]);
 
-export const eventTypes = ['Boda', 'XV años', 'Bautizo', 'Graduación', 'Evento social', 'Fiesta temática'];
+export const eventTypes = ['Boda', 'XV años', 'Bautizo', 'Graduación', 'Evento social', 'Fiesta temática', 'Fiesta infantil'];
 
-export const guestRanges = ['50 a 100 personas', '100 a 150 personas', '150 a 200 personas', 'Más de 200 personas'];
+export const guestRanges = ['50 a 80 invitados', '80 a 100 invitados', '100 a 130 invitados'];

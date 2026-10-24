@@ -23,12 +23,12 @@ function Cell({ label, children, icon }: { label: string; children: React.ReactN
 export default function BookingBar() {
   const [date, setDate] = useState('');
   const [type, setType] = useState(eventTypes[0]);
-  const [guests, setGuests] = useState(guestRanges[1]);
+  const [guests, setGuests] = useState('');
 
   const submit = (e: FormEvent) => {
     e.preventDefault();
     openWhatsApp(buildMessage('Hola, Salón Terraza. Quiero saber si tienen disponible esta fecha.', {
-      'Fecha': formatDate(date) || 'por definir', 'Evento': type, 'Invitados': guests,
+      'Fecha': formatDate(date) || 'por definir', 'Evento': type, 'Invitados': guests || 'por definir',
     }));
   };
 
@@ -46,6 +46,7 @@ export default function BookingBar() {
         </Cell>
         <Cell label="Invitados" icon={<ChevronDown className="h-[18px] w-[18px]" />}>
           <select value={guests} onChange={e => setGuests(e.target.value)} className={`${control} cursor-pointer`} aria-label="Número de invitados">
+            <option value="" disabled>100 - 130 invitados</option>
             {guestRanges.map(g => <option key={g} className="text-dark">{g}</option>)}
           </select>
         </Cell>
