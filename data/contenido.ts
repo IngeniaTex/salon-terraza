@@ -84,7 +84,7 @@ export const packages = [
       'Complementos: pan y paneras.',
       'Loza a dos tiempos: plato sopero o plato pasta, plato trinche, cubiertos y vaso de cristal.',
       refresco,
-      'Servicio de meseros (6 meseros).',
+      'Servicio de meseros.',
     ],
   },
   {
